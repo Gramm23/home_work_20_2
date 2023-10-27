@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="row text-center">
+        <div class="col-6">
+            <div class="card text-bg-light mb-3 h-100 d-flex flex-column">
+                <div class="card-header">Наши контакты</div>
+                <div class="card-body">
+                    <p class="card-text">Свяжитесь с нами, если у вас есть вопросы или нужна помощь:</p>
+                    <ul>
+                        <li>Телефон: +1-555-123-4567</li>
+                        <li>Email: info@example.com</li>
+                        <li>Адрес: ул. Примерная, 123</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <form method="post" class="h-100 d-flex flex-column">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">Ваше имя</label>
+                    <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="nameHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ваш email</label>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputMessage" class="form-label">Введите Ваше сообщение</label>
+                    <textarea type="text" name="message" class="form-control"
+                              id="exampleInputMessage"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-control">Отправить</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
