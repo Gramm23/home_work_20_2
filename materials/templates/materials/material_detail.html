@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load tags %}
+{% block content %}
+    <div class="col-4">
+        <div class="card-body d-flex flex-column mb-3">
+            <img src="{% media_path material.image %}" alt="" width="auto" height="300"/>
+        </div>
+    </div>
+    <div class="col-md-8 mb-3">
+        <div class="align-items-center">
+            <ul>
+                <h4>Материал "{{ object.title }}" ({{ object.slug }})</h4>
+                <p> Описание: {{ object.body }}</p>
+            </ul>
+            <p class="float-right">
+                <a href="{% url 'materials:list' %}">Вернуться</a>
+            </p>
+            <p class="float-left">
+                Просмотры: {{ object.views_count }}
+            </p>
+        </div>
+    </div>
+{% endblock %}
